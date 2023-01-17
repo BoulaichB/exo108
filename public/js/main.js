@@ -1,6 +1,6 @@
 // Pour l'exercice 2
-let theColor = "red";
-let theBackground = "gold";
+var theColor = "red";
+var theBackground = "gold";
 let pContent = "Il est possible de passer des parametres dans la function utilisé dans l'écouteur d'événement !"
 
 // > Event Target
@@ -15,5 +15,14 @@ exo1Btn.addEventListener('click', (e)=>{
 // ### 2. Créer un programme qui au clique du h1, le background devient gold et sa color red, Attention voici les contraintes :
 // - Les couleurs sont contenu dans des variables sur le fichier main.js, sert-en pour les affecter au style de la balise h1
 // - Il faut que ces variables soient envoyés en parametre dans la function via le addEventListener.
+let h1 = document.getElementsByTagName('h1')[0];
 
+function changementCouleur(theBackground, theColor){
+    h1.style.backgroundColor = theBackground;
+    h1.style.color = theColor;
+}
+
+h1.addEventListener('click', ()=>{
+    changementCouleur(theBackground, theColor);
+});
 
